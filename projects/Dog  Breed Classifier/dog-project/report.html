@@ -11813,7 +11813,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">load_files</span>       
@@ -13861,7 +13861,7 @@ dogs prediction accuracy=100.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">AveragePooling2D</span>
@@ -13877,7 +13877,7 @@ dogs prediction accuracy=100.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">GlobalAveragePooling2D</span>
@@ -13885,20 +13885,20 @@ dogs prediction accuracy=100.0
 <span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">border_mode</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">border_mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">,</span><span class="n">data_format</span><span class="o">=</span><span class="s2">&quot;channels_last&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
 <span class="c1">#model.add(Activation(&quot;relu&quot;))</span>
 
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">border_mode</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">border_mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
 <span class="c1">#model.add(Activation(&quot;relu&quot;))</span>
 
 
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">border_mode</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">border_mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
 <span class="c1">#model.add(Activation(&quot;relu&quot;))</span>
 
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">GlobalAveragePooling2D</span><span class="p">(</span><span class="n">dim_ordering</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">GlobalAveragePooling2D</span><span class="p">(</span><span class="n">data_format</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">133</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;softmax&quot;</span><span class="p">))</span>
 
@@ -13924,45 +13924,28 @@ dogs prediction accuracy=100.0
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-conv2d_6 (Conv2D)            (None, 223, 223, 16)      208       
+conv2d_72 (Conv2D)           (None, 223, 223, 16)      208       
 _________________________________________________________________
-max_pooling2d_8 (MaxPooling2 (None, 111, 111, 16)      0         
+max_pooling2d_71 (MaxPooling (None, 111, 111, 16)      0         
 _________________________________________________________________
-conv2d_7 (Conv2D)            (None, 110, 110, 32)      2080      
+conv2d_73 (Conv2D)           (None, 110, 110, 32)      2080      
 _________________________________________________________________
-max_pooling2d_9 (MaxPooling2 (None, 55, 55, 32)        0         
+max_pooling2d_72 (MaxPooling (None, 55, 55, 32)        0         
 _________________________________________________________________
-conv2d_8 (Conv2D)            (None, 54, 54, 64)        8256      
+conv2d_74 (Conv2D)           (None, 54, 54, 64)        8256      
 _________________________________________________________________
-max_pooling2d_10 (MaxPooling (None, 27, 27, 64)        0         
+max_pooling2d_73 (MaxPooling (None, 27, 27, 64)        0         
 _________________________________________________________________
-global_average_pooling2d_4 ( (None, 64)                0         
+global_average_pooling2d_22  (None, 64)                0         
 _________________________________________________________________
-dense_4 (Dense)              (None, 133)               8645      
+dense_22 (Dense)             (None, 133)               8645      
 _________________________________________________________________
-activation_104 (Activation)  (None, 133)               0         
+activation_19 (Activation)   (None, 133)               0         
 =================================================================
 Total params: 19,189.0
 Trainable params: 19,189.0
 Non-trainable params: 0.0
 _________________________________________________________________
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:6: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (2, 2), padding=&#34;valid&#34;, input_shape=(224, 224,...)`
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:7: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D(padding=&#34;valid&#34;, strides=None, pool_size=(2, 2))`
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:10: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(32, (2, 2), padding=&#34;valid&#34;)`
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:11: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D(padding=&#34;valid&#34;, strides=None, pool_size=(2, 2))`
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:15: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(64, (2, 2), padding=&#34;valid&#34;)`
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:16: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D(padding=&#34;valid&#34;, strides=None, pool_size=(2, 2))`
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:19: UserWarning: Update your `GlobalAveragePooling2D` call to the Keras 2 API: `GlobalAveragePooling2D(data_format=None)`
 </pre>
 </div>
 </div>
@@ -14555,7 +14538,7 @@ test_VGG19 = bottleneck_features['test']</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">regularizers</span>
@@ -14568,7 +14551,7 @@ test_VGG19 = bottleneck_features['test']</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: Obtain bottleneck features from another pre-trained CNN.</span>
@@ -14601,15 +14584,15 @@ Initialy i tried to change paramaters like batch size and epoch to increase accu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: Define your architecture.</span>
 <span class="n">VGG19_model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">input_shape</span><span class="o">=</span><span class="n">train_VGG19</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">border_mode</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">))</span>
-<span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">border_mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
+<span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span><span class="n">input_shape</span><span class="o">=</span><span class="n">train_VGG19</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">))</span>
+<span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span> <span class="p">))</span>
 <span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
-<span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">GlobalAveragePooling2D</span><span class="p">(</span><span class="n">dim_ordering</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">))</span>
+<span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">GlobalAveragePooling2D</span><span class="p">(</span><span class="n">data_format</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
 <span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
 
 <span class="n">VGG19_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">133</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
@@ -14635,36 +14618,22 @@ Initialy i tried to change paramaters like batch size and epoch to increase accu
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-conv2d_9 (Conv2D)            (None, 6, 6, 64)          131136    
+conv2d_76 (Conv2D)           (None, 6, 6, 64)          131136    
 _________________________________________________________________
-max_pooling2d_11 (MaxPooling (None, 3, 3, 64)          0         
+max_pooling2d_75 (MaxPooling (None, 3, 3, 64)          0         
 _________________________________________________________________
-activation_105 (Activation)  (None, 3, 3, 64)          0         
+activation_22 (Activation)   (None, 3, 3, 64)          0         
 _________________________________________________________________
-global_average_pooling2d_6 ( (None, 64)                0         
+global_average_pooling2d_24  (None, 64)                0         
 _________________________________________________________________
-activation_106 (Activation)  (None, 64)                0         
+activation_23 (Activation)   (None, 64)                0         
 _________________________________________________________________
-dense_6 (Dense)              (None, 133)               8645      
+dense_23 (Dense)             (None, 133)               8645      
 =================================================================
 Total params: 139,781.0
 Trainable params: 139,781.0
 Non-trainable params: 0.0
 _________________________________________________________________
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:3: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(64, (2, 2), padding=&#34;valid&#34;, input_shape=(7, 7, 512...)`
-  app.launch_new_instance()
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:4: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D(padding=&#34;valid&#34;, strides=None, pool_size=(2, 2))`
-/home/ashutosh/.local/lib/python3.5/site-packages/ipykernel/__main__.py:6: UserWarning: Update your `GlobalAveragePooling2D` call to the Keras 2 API: `GlobalAveragePooling2D(data_format=None)`
 </pre>
 </div>
 </div>
@@ -15508,7 +15477,7 @@ Epoch 200/200
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: Write your algorithm.</span>
